@@ -1,0 +1,220 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for the imreser installation profile.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function imreser_install() {
+  // Copy default images to sites/default/files.
+  //$src = 'profiles/imreser/images/';
+  $src = array('profiles/imreser/images/', 'profiles/imreser/file/');
+  $dst = 'sites/default/files/';
+  foreach ($src as $src) {
+    imreser_recurse_copy($src,$dst);
+  }
+
+  //
+  // $mkdir = array(
+  //   'sites/default/files/images/',
+  //   'sites/default/files/move',
+  //   'sites/default/files/upload/',
+  // );
+  //
+  // foreach ($mkdir as $mkdir) {
+  //   imreser_mkdir($mkdir);
+  // }
+
+  // Add text formats.
+  $full_html_format = array(
+    'format' => 'full_html',
+    'name' => 'Full HTML',
+    'weight' => 0,
+    'filters' => array(
+      // URL filter.
+      'filter_url' => array(
+        'weight' => 0,
+        'status' => 1,
+      ),
+      // Line break filter.
+      'filter_autop' => array(
+        'weight' => 1,
+        'status' => 1,
+      ),
+      // HTML corrector filter.
+      'filter_htmlcorrector' => array(
+        'weight' => 10,
+        'status' => 1,
+      ),
+    ),
+  );
+  $full_html_format = (object) $full_html_format;
+  filter_format_save($full_html_format);
+
+  $filtered_html_format = array(
+    'format' => 'filtered_html',
+    'name' => 'Filtered HTML',
+    'weight' => 1,
+    'filters' => array(
+      // URL filter.
+      'filter_url' => array(
+        'weight' => 0,
+        'status' => 1,
+      ),
+      // HTML filter.
+      'filter_html' => array(
+        'weight' => 1,
+        'status' => 1,
+      ),
+      // Line break filter.
+      'filter_autop' => array(
+        'weight' => 2,
+        'status' => 1,
+      ),
+      // HTML corrector filter.
+      'filter_htmlcorrector' => array(
+        'weight' => 10,
+        'status' => 1,
+      ),
+    ),
+  );
+  $filtered_html_format = (object) $filtered_html_format;
+  filter_format_save($filtered_html_format);
+
+  // Enable some standard blocks.
+  theme_enable(array('bartik'));
+  $default_theme = variable_get('theme_default', 'bartik');
+  $admin_theme = 'seven';
+  require_once DRUPAL_ROOT . '/profiles/imreser/include/block.php';
+
+  // Insert default pre-defined node types into the database. For a complete
+  // list of available node type attributes, refer to the node type API
+  // documentation at: http://api.drupal.org/api/HEAD/function/hook_node_info.
+  require_once DRUPAL_ROOT . '/profiles/imreser/include/node-type.php';
+
+  // Default "Basic page" to not be promoted and have comments disabled.
+  variable_set('node_options_page', array('status'));
+  variable_set('comment_page', COMMENT_NODE_HIDDEN);
+
+  // Don't display date and author information for "Basic page" nodes by default.
+  variable_set('node_submitted_page', FALSE);
+
+  // Enable user picture support and set the default to a square thumbnail option.
+  variable_set('user_pictures', '1');
+  variable_set('user_picture_dimensions', '1024x1024');
+  variable_set('user_picture_file_size', '800');
+  variable_set('user_picture_style', 'thumbnail');
+
+  // Allow visitor account creation with administrative approval.
+  variable_set('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL);
+
+  //
+
+  // require_once DRUPAL_ROOT . '/profiles/imreser/include/field-tag.php';
+  // require_once DRUPAL_ROOT . '/profiles/imreser/include/field-image.php';
+  require_once DRUPAL_ROOT . '/profiles/imreser/include/vocabulary.php';
+  require_once DRUPAL_ROOT . '/profiles/imreser/include/field.php';
+  require_once DRUPAL_ROOT . '/profiles/imreser/include/bundle.php';
+
+
+  // Enable default permissions for system roles.
+  $filtered_html_permission = filter_permission_name($filtered_html_format);
+  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content', 'access comments', $filtered_html_permission));
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content', 'access comments', 'post comments', 'skip comment approval', $filtered_html_permission));
+
+  // Create a default role for site administrators, with all available permissions assigned.
+  $admin_role = new stdClass();
+  $admin_role->name = 'administrator';
+  $admin_role->weight = 2;
+  user_role_save($admin_role);
+  user_role_grant_permissions($admin_role->rid, array_keys(module_invoke_all('permission')));
+  // Set this as the administrator role.
+  variable_set('user_admin_role', $admin_role->rid);
+
+  // Assign user 1 the "administrator" role.
+  db_insert('users_roles')
+    ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
+    ->execute();
+
+
+  //
+  require_once DRUPAL_ROOT . '/profiles/imreser/include/term.php';
+  require_once DRUPAL_ROOT . '/profiles/imreser/include/node-pages.php';
+  require_once DRUPAL_ROOT . '/profiles/imreser/include/node-products.php';
+  // require_once DRUPAL_ROOT . '/profiles/imreser/include/node-case.php';
+  // require_once DRUPAL_ROOT . '/profiles/imreser/include/node-news.php';
+  // require_once DRUPAL_ROOT . '/profiles/imreser/include/node-test.php';
+  require_once DRUPAL_ROOT . '/profiles/imreser/include/menu.php';
+
+  // Update the menu router information.
+  menu_rebuild();
+
+  // Enable the admin theme.
+    db_update('system')
+      ->fields(array('status' => 1))
+      ->condition('type', 'theme')
+      ->condition('name', 'seven')
+      ->execute();
+    variable_set('admin_theme', 'seven');
+    variable_set('node_admin_theme', '1');
+}
+
+
+function imreser_mkdir($mkdir) {
+  @mkdir($mkdir);
+}
+
+
+function imreser_recurse_copy($src, $dst) {
+  $dir = opendir($src);
+  @mkdir($dst);
+  while (FALSE !== ($file = readdir($dir))) {
+    if (($file != '.') && ($file != '..')) {
+      if (is_dir($src . '/' . $file)) {
+        imreser_recurse_copy($src . '/' . $file, $dst . '/' . $file);
+      }
+      else {
+        copy($src . '/' . $file, $dst . '/' . $file);
+      }
+    }
+  }
+  closedir($dir);
+}
+
+
+// Moves all images to the public:// folder.
+
+// function imreser_images_move($install_state) {
+//   $dir = drupal_get_path('profile', 'imreser') . '/images';
+//   $images = file_scan_directory($dir, '/.*/');
+//   foreach($images as $value) {
+//   $file_path = $value->uri;
+//     $file = (object)array(
+//       "uid" => 1,
+//       "uri" => $file_path,
+//       "filemime" => file_get_mimetype($file_path),
+//       "status" => 1
+//     );
+//     $file = file_copy($file, 'public://move/', FILE_EXISTS_REPLACE);
+//   }
+// }
+
+
+// Implements hook_file_upload().
+function imreser_file_upload($filepath,$filepath_dst) {
+  $file = (object) array(
+    'uid' => 1,
+    'uri' => $filepath,
+    'filemime' => file_get_mimetype($filepath),
+    'status' => 1,
+  );
+  $file = file_copy($file, $filepath_dst, FILE_EXISTS_REPLACE);
+  $fid = $file->fid;
+  return $fid;
+}
