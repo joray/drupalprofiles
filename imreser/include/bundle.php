@@ -1,9 +1,9 @@
 <?php
-// bundle 1tag 2file-images 3file-pdf 4file-video
-// bundle 1tag
-
 // Many of the following values will be defaulted, they're included here as an illustrative examples.
 // See http://api.drupal.org/api/function/field_create_instance/7
+// bundle tag file-images file-pdf file-video
+
+// tag
 $help = st('Enter a comma-separated list of words to describe your content.');
 $instance = array(
   array(
@@ -124,11 +124,7 @@ $instance = array(
 );
 foreach ($instance as $instance) {field_create_instance($instance);}
 
-// bundle 1tag 2file-images 3file-pdf 4file-video
-// bundle 1tag 2file-images
-
-// Many of the following values will be defaulted, they're included here as an illustrative examples.
-// See http://api.drupal.org/api/function/field_create_instance/7
+// images
 $instance = array(
   array(
     'field_name' => 'field_image_article',
@@ -343,27 +339,7 @@ $instance = array(
 );
 foreach ($instance as $instance) {field_create_instance($instance);}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// bundle 1tag 2file-images 3file-pdf 4file-video
-// bundle 1tag 2file-images 3file-pdf
-
-// Many of the following values will be defaulted, they're included here as an illustrative examples.
-// See http://api.drupal.org/api/function/field_create_instance/7
-
+// file
 $instance = array(
   array(
     'field_name' => 'field_file_product',
@@ -397,6 +373,66 @@ $instance = array(
         'type' => 'file_url_plain',
         'weight' => 99,
       ),
+    ),
+  ),
+);
+foreach ($instance as $instance) {field_create_instance($instance);}
+
+
+// text
+$instance = array(
+  array(
+    'field_name' => 'field_text_product',
+    'entity_type' => 'node',
+    'label' => 'Text',
+    'bundle' => 'product',
+    'description' => st('Create parameter description for this product.'),
+    'required' => FALSE,
+
+    'settings' => array(),
+
+    'widget' => array(
+      'type' => 'text',
+      'settings' => array(),
+    ),
+
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'type' => '',
+        'weight' => 99,
+      ),
+      'teaser' => array(),
+    ),
+  ),
+);
+foreach ($instance as $instance) {field_create_instance($instance);}
+
+
+// text_long
+$instance = array(
+  array(
+    'field_name' => 'field_text_long_product',
+    'entity_type' => 'node',
+    'label' => 'Text Long',
+    'bundle' => 'product',
+    'description' => st('Create description for this product.'),
+    'required' => FALSE,
+
+    'settings' => array(),
+
+    'widget' => array(
+      'type' => 'text_long',
+      'settings' => array(),
+    ),
+
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'type' => '',
+        'weight' => 99,
+      ),
+      'teaser' => array(),
     ),
   ),
 );
