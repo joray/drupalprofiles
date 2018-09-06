@@ -177,12 +177,12 @@ $field = array(
     array(
     'field_name' => 'field_file1_product',
     'type' => 'file',
-    'cardinality' => 6,
+    'cardinality' => 1,
   ),
     array(
     'field_name' => 'field_file2_product',
     'type' => 'file',
-    'cardinality' => 6,
+    'cardinality' => 1,
   ),
 );
 foreach ($field as $field) {field_create_field($field);}
