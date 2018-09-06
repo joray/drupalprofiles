@@ -165,13 +165,13 @@ $field = array(
     'cardinality' => 6,
   ),
     array(
-    'field_name' => 'field_text_long_product',
-    'type' => 'text_long',
+    'field_name' => 'field_text_product',
+    'type' => 'text',
     'cardinality' => 1,
   ),
     array(
-    'field_name' => 'field_text_product',
-    'type' => 'text',
+    'field_name' => 'field_text_long_product',
+    'type' => 'text_long',
     'cardinality' => 1,
   ),
     array(
