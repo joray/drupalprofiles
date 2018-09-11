@@ -390,20 +390,25 @@ $instance = array(
     'required' => FALSE,
 
     'settings' => array(),
-    
+
     'widget' => array(
       'type' => 'text_textfield',
       'settings' => array(
+        'size' => '59',
       ),
     ),
-    
+
     'display' => array(
       'default' => array(
         'label' => 'inline',
-        'type' => '',
+        'type' => 'text_default',
         'weight' => 99,
       ),
-      'teaser' => array(),
+      'teaser' => array(
+        'label' => 'inline',
+        'type' => 'text_trimmed',
+        'weight' => 99,
+      ),
     ),
   ),
 );
@@ -424,16 +429,22 @@ $instance = array(
 
     'widget' => array(
       'type' => 'text_textarea',
-      'settings' => array(),
+      'settings' => array(
+        'rows' => '16',
+      ),
     ),
 
     'display' => array(
       'default' => array(
         'label' => 'inline',
-        'type' => '',
+        'type' => 'text_default',
         'weight' => 99,
       ),
-      'teaser' => array(),
+      'teaser' => array(
+        'label' => 'inline',
+        'type' => 'text_trimmed',
+        'weight' => 99,
+      ),
     ),
   ),
 );
