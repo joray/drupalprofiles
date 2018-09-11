@@ -390,12 +390,13 @@ $instance = array(
     'required' => FALSE,
 
     'settings' => array(),
-
+    
     'widget' => array(
-      'type' => 'text',
-      'settings' => array(),
+      'type' => 'text_textfield',
+      'settings' => array(
+      ),
     ),
-
+    
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -422,7 +423,7 @@ $instance = array(
     'settings' => array(),
 
     'widget' => array(
-      'type' => 'text_long',
+      'type' => 'text_textarea',
       'settings' => array(),
     ),
 
