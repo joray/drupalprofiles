@@ -3,7 +3,6 @@
 //////////////////////////////////////////////////////////////////////////////////
 global $user;
 $node = new stdClass();
-$node =node_load($nid);
 $node->type = 'page';
 node_object_prepare($node);
 $node->uid = $user->uid;
