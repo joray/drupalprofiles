@@ -164,13 +164,10 @@ $field = array(
     'type' => 'file',
     'cardinality' => 6,
   ),
-
-
   array(
     'field_name' => 'field_text_product',
     'type' => 'text',
     'cardinality' => 1,
-
     'locked' => FALSE,
     'settings' => array(),
     'storage' => array(
@@ -178,33 +175,16 @@ $field = array(
       'settings' => array(),
     ),
   ),
-
-
   array(
     'field_name' => 'field_text_long_product',
     'type' => 'text_long',
     'cardinality' => 1,
-
     'locked' => FALSE,
     'settings' => array(),
     'storage' => array(
       'type' => 'field_sql_storage',
       'settings' => array(),
     ),
-  ),
-
-
-  array(
-    'field_name' => 'field_file1_product',
-    'type' => 'file',
-    'cardinality' => 1,
-  ),
-
-
-  array(
-    'field_name' => 'field_file2_product',
-    'type' => 'file',
-    'cardinality' => 1,
   ),
 );
 foreach ($field as $field) {field_create_field($field);}
