@@ -1,9 +1,8 @@
 <?php
 // Many of the following values will be defaulted, they're included here as an illustrative examples.
 // See http://api.drupal.org/api/function/field_create_instance/7
-// bundle tag file-images file-pdf file-video
 
-// tag
+//tag
 $help = st('Enter a comma-separated list of words to describe your content.');
 $instance = array(
   array(
@@ -124,7 +123,7 @@ $instance = array(
 );
 foreach ($instance as $instance) {field_create_instance($instance);}
 
-// images
+//images
 $instance = array(
   array(
     'field_name' => 'field_image_article',
@@ -339,7 +338,7 @@ $instance = array(
 );
 foreach ($instance as $instance) {field_create_instance($instance);}
 
-// file
+//file
 $instance = array(
   array(
     'field_name' => 'field_file_product',
@@ -378,8 +377,7 @@ $instance = array(
 );
 foreach ($instance as $instance) {field_create_instance($instance);}
 
-
-// text
+//text
 $instance = array(
   array(
     'field_name' => 'field_text_product',
@@ -388,16 +386,13 @@ $instance = array(
     'bundle' => 'product',
     'description' => st('Create parameter description for this product.'),
     'required' => FALSE,
-
     'settings' => array(),
-
     'widget' => array(
       'type' => 'text_textfield',
       'settings' => array(
         'size' => '59',
       ),
     ),
-
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -414,8 +409,7 @@ $instance = array(
 );
 foreach ($instance as $instance) {field_create_instance($instance);}
 
-
-// text_long
+//text_long
 $instance = array(
   array(
     'field_name' => 'field_text_long_product',
@@ -424,16 +418,13 @@ $instance = array(
     'bundle' => 'product',
     'description' => st('Create description for this product.'),
     'required' => FALSE,
-
     'settings' => array(),
-
     'widget' => array(
       'type' => 'text_textarea',
       'settings' => array(
         'rows' => '16',
       ),
     ),
-
     'display' => array(
       'default' => array(
         'label' => 'inline',
