@@ -36,7 +36,6 @@ EAN 代码	3165140548007
 //////////////////////////////////////////////////////////////////////////////////
 global $user;
 $node = new stdClass();
-$node =node_load($nid);
 $node->type = 'product';
 $node->uid = $user->uid;
 $node->title = '博世 GLM 250 VF Professional';
@@ -165,5 +164,3 @@ node_object_prepare($node); // Sets some defaults. Invokes hook_prepare() and ho
 $node = node_submit($node); // Prepare node for saving
 //  node_submit($node);
 node_save($node);
-
-//////////////////////////////////////////////////////////////////////////////////
