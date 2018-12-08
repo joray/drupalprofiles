@@ -49,10 +49,10 @@ $types = array(
     'locked' => 0,
   ),
   array(
-    'type' => 'exhibition',
-    'name' => st('Exhibition'),
+    'type' => 'advertisement',
+    'name' => st('advertisement'),
     'base' => 'node_content',
-    'description' => st('Use <em>exhibition</em> to display important content of the website, such as the content displayed in the window, the content of the slide show.'),
+    'description' => st('Use <em>advertisement</em> to display important content of the website, such as the content displayed in the window, the content of the slide show.'),
     'custom' => 1,
     'modified' => 1,
     'locked' => 0,
@@ -131,13 +131,13 @@ $rdf_mappings = array(
   ),
   array(
     'type' => 'node',
-    'bundle' => 'exhibition',
+    'bundle' => 'advertisement',
     'mapping' => array(
-      'field_image_exhibition' => array(
+      'field_image_advertisement' => array(
         'predicates' => array('og:image', 'rdfs:seeAlso'),
         'type' => 'rel',
       ),
-      'field_tags_exhibition' => array(
+      'field_tags_advertisement' => array(
         'predicates' => array('dc:subject'),
         'type' => 'rel',
       ),

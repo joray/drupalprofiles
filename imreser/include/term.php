@@ -42,7 +42,7 @@ foreach ($terms as $name) {
   taxonomy_term_save($term);
 }
 $terms = array();
-$vocabulary = taxonomy_vocabulary_machine_name_load('tags_exhibition');
+$vocabulary = taxonomy_vocabulary_machine_name_load('tags_advertisement');
 $terms[] = 'Home';
 $terms[] = 'Contact';
 $terms[] = 'News';

@@ -23,9 +23,9 @@ $vocabulary =  array(
   'machine_name' => 'tags_case',
 ),
  (object) array(
-  'name' => st('exhibition'),
+  'name' => st('advertisement'),
   'description' => $description,
-  'machine_name' => 'tags_exhibition',
+  'machine_name' => 'tags_advertisement',
 ),
 );
 //$vocabulary = (object) $vocabulary;

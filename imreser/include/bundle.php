@@ -98,10 +98,10 @@ $instance = array(
     ),
   ),
   array(
-    'field_name' => 'field_tags_exhibition',
+    'field_name' => 'field_tags_advertisement',
     'entity_type' => 'node',
     'label' => 'Tags',
-    'bundle' => 'exhibition',
+    'bundle' => 'advertisement',
     'description' => $help,
     'widget' => array(
       'type' => 'taxonomy_autocomplete',
@@ -294,15 +294,15 @@ $instance = array(
     ),
   ),
   array(
-    'field_name' => 'field_image_exhibition',
+    'field_name' => 'field_image_advertisement',
     'entity_type' => 'node',
     'label' => 'Image',
-    'bundle' => 'exhibition',
-    'description' => st('Upload an image to go with this exhibition.'),
+    'bundle' => 'advertisement',
+    'description' => st('Upload an image to go with this advertisement.'),
     'required' => FALSE,
 
     'settings' => array(
-      'file_directory' => 'field/images/exhibition',
+      'file_directory' => 'field/images/advertisement',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',

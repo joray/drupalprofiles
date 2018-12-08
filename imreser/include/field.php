@@ -61,13 +61,13 @@ $field = array(
     ),
   ),
   array(
-    'field_name' => 'field_tags_exhibition',
+    'field_name' => 'field_tags_advertisement',
     'type' => 'taxonomy_term_reference',
     'cardinality' => FIELD_CARDINALITY_UNLIMITED,  // Set cardinality to unlimited for tagging.
     'settings' => array(
       'allowed_values' => array(
         array(
-          'vocabulary' => 'tags_exhibition',
+          'vocabulary' => 'tags_advertisement',
           'parent' => 0,
         ),
       ),
@@ -145,7 +145,7 @@ $field = array(
     ),
   ),
   array(
-    'field_name' => 'field_image_exhibition',
+    'field_name' => 'field_image_advertisement',
     'type' => 'image',
     'cardinality' => 3,
     'locked' => FALSE,
