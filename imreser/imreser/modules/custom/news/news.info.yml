@@ -1,0 +1,13 @@
+name: News
+description: "Provides News 内容类型 and related configuration. Use news to publish current affairs news, industry news and company news.\t"
+type: module
+core: 8.x
+dependencies:
+  - field
+  - language
+  - menu_ui
+  - node
+  - path
+  - taxonomy
+  - text
+  - user

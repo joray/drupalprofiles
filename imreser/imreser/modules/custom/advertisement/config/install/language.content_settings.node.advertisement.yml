@@ -1,0 +1,10 @@
+langcode: zh-hans
+status: true
+dependencies:
+  config:
+    - node.type.advertisement
+id: node.advertisement
+target_entity_type_id: node
+target_bundle: advertisement
+default_langcode: site_default
+language_alterable: false

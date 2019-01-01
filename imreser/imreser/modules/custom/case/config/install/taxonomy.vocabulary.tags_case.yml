@@ -1,0 +1,8 @@
+langcode: zh-hans
+status: true
+dependencies: {  }
+name: case
+vid: tags_case
+description: ''
+hierarchy: 0
+weight: 0

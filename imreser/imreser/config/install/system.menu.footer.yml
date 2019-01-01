@@ -1,0 +1,7 @@
+langcode: zh-hans
+status: true
+dependencies: {  }
+id: footer
+label: 页脚
+description: 站点信息链接
+locked: true

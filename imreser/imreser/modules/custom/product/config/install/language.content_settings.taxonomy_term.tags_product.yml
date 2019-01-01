@@ -1,0 +1,10 @@
+langcode: zh-hans
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tags_product
+id: taxonomy_term.tags_product
+target_entity_type_id: taxonomy_term
+target_bundle: tags_product
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,13 @@
+name: Advertisement
+description: 'Provides Advertisement 内容类型 and related configuration. Use advertisement to display important content of the website, such as the content displayed in the window, the content of the slide show.'
+type: module
+core: 8.x
+dependencies:
+  - field
+  - language
+  - menu_ui
+  - node
+  - path
+  - taxonomy
+  - text
+  - user

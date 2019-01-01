@@ -1,0 +1,12 @@
+langcode: zh-hans
+status: true
+dependencies: {  }
+id: image
+label: 图像
+description: 使用本地图片作为可重用媒体。
+source: image
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_image
+field_map: {  }

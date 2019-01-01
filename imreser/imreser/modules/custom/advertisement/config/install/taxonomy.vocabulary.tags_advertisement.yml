@@ -1,0 +1,8 @@
+langcode: zh-hans
+status: true
+dependencies: {  }
+name: advertisement
+vid: tags_advertisement
+description: ''
+hierarchy: 0
+weight: 0

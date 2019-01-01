@@ -1,0 +1,11 @@
+langcode: zh-hans
+status: true
+dependencies: {  }
+id: feedback
+label: 网站反馈
+recipients:
+  - webmaster@imreser.com
+reply: ''
+weight: 0
+message: 您的信息已被送出。
+redirect: ''

@@ -1,0 +1,12 @@
+langcode: zh-hans
+status: true
+dependencies: {  }
+id: file
+label: 文件
+description: 使用本地文件作为可重用的媒体。
+source: file
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_file
+field_map: {  }

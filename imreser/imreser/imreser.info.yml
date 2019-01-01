@@ -1,0 +1,18 @@
+name: Default
+type: profile
+core: 8.x
+dependencies:
+  - automated_cron
+  - block
+  - core
+  - help
+  - language
+  - search
+  - site
+  - system
+  - user
+themes:
+  - bartik
+  - seven
+distribution:
+  name: Default

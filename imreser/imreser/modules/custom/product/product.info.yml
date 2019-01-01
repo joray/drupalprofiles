@@ -1,0 +1,13 @@
+name: Product
+description: 'Provides Product 内容类型 and related configuration. Use product to post your products, such as clothes and shoes.'
+type: module
+core: 8.x
+dependencies:
+  - field
+  - language
+  - menu_ui
+  - node
+  - path
+  - taxonomy
+  - text
+  - user

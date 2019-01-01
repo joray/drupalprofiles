@@ -1,0 +1,13 @@
+name: Case
+description: 'Provides Case 内容类型 and related configuration. Use case to showcase your success stories and case studies.'
+type: module
+core: 8.x
+dependencies:
+  - field
+  - language
+  - menu_ui
+  - node
+  - path
+  - taxonomy
+  - text
+  - user

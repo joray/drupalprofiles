@@ -1,0 +1,19 @@
+langcode: zh-hans
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bartik
+id: bartik_content
+theme: bartik
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 主页内容
+  provider: system
+  label_display: '0'
+visibility: {  }

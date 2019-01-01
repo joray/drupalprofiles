@@ -1,0 +1,8 @@
+langcode: zh-hans
+status: true
+dependencies: {  }
+name: product
+vid: tags_product
+description: ''
+hierarchy: 0
+weight: 0

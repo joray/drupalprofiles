@@ -1,0 +1,7 @@
+langcode: zh-hans
+status: true
+dependencies: {  }
+id: account
+label: 用户帐户菜单
+description: 链接到活跃的用户账户
+locked: true
