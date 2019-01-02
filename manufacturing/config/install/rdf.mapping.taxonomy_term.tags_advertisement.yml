@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tags_advertisement
+  module:
+    - taxonomy
+id: taxonomy_term.tags_advertisement
+targetEntityType: taxonomy_term
+bundle: tags_advertisement
+types:
+  - 'schema:Thing'
+fieldMappings:
+  name:
+    properties:
+      - 'schema:name'
+  description:
+    properties:
+      - 'schema:description'

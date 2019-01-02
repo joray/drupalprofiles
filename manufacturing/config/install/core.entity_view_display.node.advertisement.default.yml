@@ -5,8 +5,8 @@ dependencies:
     - core.entity_view_display.comment.comment.default
     - field.field.node.advertisement.body
     - field.field.node.advertisement.comment
-    - field.field.node.advertisement.field_image
-    - field.field.node.advertisement.field_tags
+    - field.field.node.advertisement.field_image_advertisement
+    - field.field.node.advertisement.field_tags_advertisement
     - image.style.large
     - node.type.advertisement
   module:
@@ -35,7 +35,7 @@ content:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-  field_image:
+  field_image_advertisement:
     type: image
     weight: -1
     region: content
@@ -44,7 +44,7 @@ content:
       image_link: ''
     third_party_settings: {  }
     label: hidden
-  field_tags:
+  field_tags_advertisement:
     type: entity_reference_label
     weight: 10
     region: content

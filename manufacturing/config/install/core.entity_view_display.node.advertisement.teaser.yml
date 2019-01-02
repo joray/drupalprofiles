@@ -5,8 +5,8 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.advertisement.body
     - field.field.node.advertisement.comment
-    - field.field.node.advertisement.field_image
-    - field.field.node.advertisement.field_tags
+    - field.field.node.advertisement.field_image_advertisement
+    - field.field.node.advertisement.field_tags_advertisement
     - image.style.medium
     - node.type.advertisement
   module:
@@ -26,7 +26,7 @@ content:
       trim_length: 600
     third_party_settings: {  }
     label: hidden
-  field_image:
+  field_image_advertisement:
     type: image
     weight: -1
     region: content
@@ -35,7 +35,7 @@ content:
       image_link: content
     third_party_settings: {  }
     label: hidden
-  field_tags:
+  field_tags_advertisement:
     type: entity_reference_label
     weight: 10
     region: content
@@ -48,5 +48,5 @@ content:
     region: content
 hidden:
   comment: true
-  field_image: true
-  field_tags: true
+  field_image_advertisement: true
+  field_tags_advertisement: true
