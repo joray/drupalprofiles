@@ -2,15 +2,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_image
+    - field.storage.node.field_image_advertisement
     - node.type.advertisement
   module:
     - image
-id: node.advertisement.field_image
-field_name: field_image
+id: node.advertisement.field_image_advertisement
+field_name: field_image_advertisement
 entity_type: node
 bundle: advertisement
-label: Image
+label: Image_advertisement
 description: ''
 required: false
 translatable: true

@@ -3,7 +3,7 @@ status: true
 dependencies: {  }
 name: 'Advertisement'
 type: advertisement
-description: 'Use <strong>Advertisement</strong> to display important content of the website, such as the content displayed in the window, the content of the slide show.'
+description: 'Use <strong>advertisement</strong> to display important content of the website, such as the content displayed in the window, the content of the slide show.'
 help: ''
 new_revision: true
 preview_mode: 1
