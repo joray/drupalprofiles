@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Case
+type: case
+description: 'Use <strong>Case</strong> to showcase your success stories and case studies.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true
