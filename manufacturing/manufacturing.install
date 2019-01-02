@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Install, update and uninstall functions for the standard installation profile.
+ * Install, update and uninstall functions for the manufacturing installation profile.
  */
 
 use Drupal\user\Entity\User;
@@ -16,7 +16,7 @@ use Drupal\shortcut\Entity\Shortcut;
  *
  * @see system_install()
  */
-function standard_install() {
+function manufacturing_install() {
   // Set front page to "node".
   \Drupal::configFactory()->getEditable('system.site')->set('page.front', '/node')->save(TRUE);
 
