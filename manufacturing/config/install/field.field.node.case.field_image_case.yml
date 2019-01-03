@@ -10,7 +10,7 @@ id: node.case.field_image_case
 field_name: field_image_case
 entity_type: node
 bundle: case
-label: Image_case
+label: Image
 description: ''
 required: false
 translatable: true

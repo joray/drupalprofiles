@@ -10,7 +10,7 @@ id: node.advertisement.field_image_advertisement
 field_name: field_image_advertisement
 entity_type: node
 bundle: advertisement
-label: Image_advertisement
+label: Image
 description: ''
 required: false
 translatable: true

@@ -10,7 +10,7 @@ id: node.product.field_image_product
 field_name: field_image_product
 entity_type: node
 bundle: product
-label: Image_product
+label: Image
 description: ''
 required: false
 translatable: true
