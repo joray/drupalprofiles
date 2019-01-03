@@ -5,8 +5,8 @@ dependencies:
     - core.entity_view_display.comment.comment.default
     - field.field.node.case.body
     - field.field.node.case.comment
-    - field.field.node.case.field_image
-    - field.field.node.case.field_tags
+    - field.field.node.case.field_image_case
+    - field.field.node.case.field_tags_case
     - image.style.large
     - node.type.case
   module:
@@ -35,7 +35,7 @@ content:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-  field_image:
+  field_image_case:
     type: image
     weight: -1
     region: content
@@ -44,7 +44,7 @@ content:
       image_link: ''
     third_party_settings: {  }
     label: hidden
-  field_tags:
+  field_tags_case:
     type: entity_reference_label
     weight: 10
     region: content

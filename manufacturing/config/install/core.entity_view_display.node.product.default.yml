@@ -5,8 +5,8 @@ dependencies:
     - core.entity_view_display.comment.comment.default
     - field.field.node.product.body
     - field.field.node.product.comment
-    - field.field.node.product.field_image
-    - field.field.node.product.field_tags
+    - field.field.node.product.field_image_product
+    - field.field.node.product.field_tags_product
     - image.style.large
     - node.type.product
   module:
@@ -35,7 +35,7 @@ content:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-  field_image:
+  field_image_product:
     type: image
     weight: -1
     region: content
@@ -44,7 +44,7 @@ content:
       image_link: ''
     third_party_settings: {  }
     label: hidden
-  field_tags:
+  field_tags_product:
     type: entity_reference_label
     weight: 10
     region: content

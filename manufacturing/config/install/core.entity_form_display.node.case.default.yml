@@ -4,8 +4,8 @@ dependencies:
   config:
     - field.field.node.case.body
     - field.field.node.case.comment
-    - field.field.node.case.field_image
-    - field.field.node.case.field_tags
+    - field.field.node.case.field_image_case
+    - field.field.node.case.field_tags_case
     - image.style.thumbnail
     - node.type.case
   module:
@@ -39,7 +39,7 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_image:
+  field_image_case:
     type: image_image
     weight: 4
     region: content
@@ -47,7 +47,7 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-  field_tags:
+  field_tags_case:
     type: entity_reference_autocomplete_tags
     weight: 3
     region: content

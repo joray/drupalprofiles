@@ -4,8 +4,8 @@ dependencies:
   config:
     - field.field.node.product.body
     - field.field.node.product.comment
-    - field.field.node.product.field_image
-    - field.field.node.product.field_tags
+    - field.field.node.product.field_image_product
+    - field.field.node.product.field_tags_product
     - image.style.thumbnail
     - node.type.product
   module:
@@ -39,7 +39,7 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_image:
+  field_image_product:
     type: image_image
     weight: 4
     region: content
@@ -47,7 +47,7 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-  field_tags:
+  field_tags_product:
     type: entity_reference_autocomplete_tags
     weight: 3
     region: content

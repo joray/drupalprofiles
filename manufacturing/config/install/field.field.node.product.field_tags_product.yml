@@ -2,14 +2,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_tags
-    - node.type.article
-    - taxonomy.vocabulary.tags
-id: node.article.field_tags
-field_name: field_tags
+    - field.storage.node.field_tags_product
+    - node.type.product
+    - taxonomy.vocabulary.tags_product
+id: node.product.field_tags_product
+field_name: field_tags_product
 entity_type: node
-bundle: article
-label: Tags
+bundle: product
+label: Tags_product
 description: 'Enter a comma-separated list. For example: Amsterdam, Mexico City, "Cleveland, Ohio"'
 required: false
 translatable: true
@@ -19,7 +19,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      tags: tags
+      tags: tags_product
     sort:
       field: _none
     auto_create: true
