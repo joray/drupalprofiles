@@ -6,7 +6,7 @@ dependencies:
     - field.field.node.advertisement.body
     - field.field.node.advertisement.comment
     - field.field.node.advertisement.field_image_advertisement
-    - field.field.node.advertisement.field_tags_advertisement
+    - field.field.node.advertisement.field_tag_advertisement
     - image.style.large
     - node.type.advertisement
   module:
@@ -44,7 +44,7 @@ content:
       image_link: ''
     third_party_settings: {  }
     label: hidden
-  field_tags_advertisement:
+  field_tag_advertisement:
     type: entity_reference_label
     weight: 10
     region: content

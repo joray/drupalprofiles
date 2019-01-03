@@ -4,8 +4,8 @@ dependencies:
   module:
     - node
     - taxonomy
-id: node.field_tags_article
-field_name: field_tags_article
+id: node.field_tag_product
+field_name: field_tag_product
 entity_type: node
 type: entity_reference
 settings:

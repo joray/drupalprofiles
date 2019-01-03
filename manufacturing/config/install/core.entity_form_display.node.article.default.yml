@@ -5,7 +5,7 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.comment
     - field.field.node.article.field_image_article
-    - field.field.node.article.field_tags_article
+    - field.field.node.article.field_tag_article
     - image.style.thumbnail
     - node.type.article
   module:
@@ -47,7 +47,7 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-  field_tags_article:
+  field_tag_article:
     type: entity_reference_autocomplete_tags
     weight: 3
     region: content

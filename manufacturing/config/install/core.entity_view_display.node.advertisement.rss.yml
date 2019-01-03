@@ -6,7 +6,7 @@ dependencies:
     - field.field.node.advertisement.body
     - field.field.node.advertisement.comment
     - field.field.node.advertisement.field_image_advertisement
-    - field.field.node.advertisement.field_tags_advertisement
+    - field.field.node.advertisement.field_tag_advertisement
     - node.type.advertisement
   module:
     - user
@@ -22,4 +22,4 @@ hidden:
   body: true
   comment: true
   field_image_advertisement: true
-  field_tags_advertisement: true
+  field_tag_advertisement: true

@@ -5,7 +5,7 @@ dependencies:
     - field.field.node.case.body
     - field.field.node.case.comment
     - field.field.node.case.field_image_case
-    - field.field.node.case.field_tags_case
+    - field.field.node.case.field_tag_case
     - image.style.thumbnail
     - node.type.case
   module:
@@ -47,7 +47,7 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-  field_tags_case:
+  field_tag_case:
     type: entity_reference_autocomplete_tags
     weight: 3
     region: content

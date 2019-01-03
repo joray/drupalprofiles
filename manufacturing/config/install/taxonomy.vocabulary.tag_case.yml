@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Tag Case
+vid: tag_case
+description: 'Use Tag Case to group articles on similar topics into categories.'
+hierarchy: 0
+weight: 0

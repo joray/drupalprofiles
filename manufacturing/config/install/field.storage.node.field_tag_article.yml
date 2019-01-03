@@ -4,8 +4,8 @@ dependencies:
   module:
     - node
     - taxonomy
-id: node.field_tags_advertisement
-field_name: field_tags_advertisement
+id: node.field_tag_article
+field_name: field_tag_article
 entity_type: node
 type: entity_reference
 settings:

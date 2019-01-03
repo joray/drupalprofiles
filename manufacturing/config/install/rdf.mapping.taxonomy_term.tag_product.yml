@@ -2,12 +2,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - taxonomy.vocabulary.tags
+    - taxonomy.vocabulary.tag_product
   module:
     - taxonomy
-id: taxonomy_term.tags
+id: taxonomy_term.tag_product
 targetEntityType: taxonomy_term
-bundle: tags
+bundle: tag_product
 types:
   - 'schema:Thing'
 fieldMappings:

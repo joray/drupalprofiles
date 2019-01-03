@@ -2,14 +2,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_tags_case
-    - node.type.case
-    - taxonomy.vocabulary.tags_case
-id: node.case.field_tags_case
-field_name: field_tags_case
+    - field.storage.node.field_tag_news
+    - node.type.news
+    - taxonomy.vocabulary.tag_news
+id: node.news.field_tag_news
+field_name: field_tag_news
 entity_type: node
-bundle: case
-label: Tags_case
+bundle: news
+label: Tag_news
 description: 'Enter a comma-separated list. For example: Amsterdam, Mexico City, "Cleveland, Ohio"'
 required: false
 translatable: true
@@ -19,7 +19,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      tags: tags_case
+      tags: tag_news
     sort:
       field: _none
     auto_create: true

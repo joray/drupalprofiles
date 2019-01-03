@@ -6,7 +6,7 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.comment
     - field.field.node.article.field_image_article
-    - field.field.node.article.field_tags_article
+    - field.field.node.article.field_tag_article
     - image.style.large
     - node.type.article
   module:
@@ -44,7 +44,7 @@ content:
       image_link: ''
     third_party_settings: {  }
     label: hidden
-  field_tags_article:
+  field_tag_article:
     type: entity_reference_label
     weight: 10
     region: content

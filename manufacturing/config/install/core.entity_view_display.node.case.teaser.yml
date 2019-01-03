@@ -6,7 +6,7 @@ dependencies:
     - field.field.node.case.body
     - field.field.node.case.comment
     - field.field.node.case.field_image_case
-    - field.field.node.case.field_tags_case
+    - field.field.node.case.field_tag_case
     - image.style.medium
     - node.type.case
   module:
@@ -35,7 +35,7 @@ content:
       image_link: content
     third_party_settings: {  }
     label: hidden
-  field_tags_case:
+  field_tag_case:
     type: entity_reference_label
     weight: 10
     region: content
@@ -49,4 +49,4 @@ content:
 hidden:
   comment: true
   field_image_case: true
-  field_tags_case: true
+  field_tag_case: true

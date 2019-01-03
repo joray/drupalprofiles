@@ -6,7 +6,7 @@ dependencies:
     - field.field.node.product.body
     - field.field.node.product.comment
     - field.field.node.product.field_image_product
-    - field.field.node.product.field_tags_product
+    - field.field.node.product.field_tag_product
     - node.type.product
   module:
     - user
@@ -22,4 +22,4 @@ hidden:
   body: true
   comment: true
   field_image_product: true
-  field_tags_product: true
+  field_tag_product: true

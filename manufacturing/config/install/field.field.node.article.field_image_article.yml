@@ -7,7 +7,7 @@ dependencies:
   module:
     - image
 id: node.article.field_image
-field_name: field_image
+field_name: field_image_article
 entity_type: node
 bundle: article
 label: Image

@@ -6,7 +6,7 @@ dependencies:
     - field.field.node.case.body
     - field.field.node.case.comment
     - field.field.node.case.field_image_case
-    - field.field.node.case.field_tags_case
+    - field.field.node.case.field_tag_case
     - node.type.case
   module:
     - user
@@ -22,4 +22,4 @@ hidden:
   body: true
   comment: true
   field_image_case: true
-  field_tags_case: true
+  field_tag_case: true

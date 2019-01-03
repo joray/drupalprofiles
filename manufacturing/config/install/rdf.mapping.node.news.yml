@@ -44,6 +44,6 @@ fieldMappings:
   field_image:
     properties:
       - 'schema:image'
-  field_tags:
+  field_tag:
     properties:
       - 'schema:about'

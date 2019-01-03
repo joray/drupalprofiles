@@ -6,7 +6,7 @@ dependencies:
     - field.field.node.news.body
     - field.field.node.news.comment
     - field.field.node.news.field_image_news
-    - field.field.node.news.field_tags_news
+    - field.field.node.news.field_tag_news
     - image.style.medium
     - node.type.news
   module:
@@ -35,7 +35,7 @@ content:
       image_link: content
     third_party_settings: {  }
     label: hidden
-  field_tags_news:
+  field_tag_news:
     type: entity_reference_label
     weight: 10
     region: content
@@ -49,4 +49,4 @@ content:
 hidden:
   comment: true
   field_image_news: true
-  field_tags_news: true
+  field_tag_news: true

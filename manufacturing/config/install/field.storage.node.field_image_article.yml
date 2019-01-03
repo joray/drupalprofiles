@@ -5,7 +5,7 @@ dependencies:
     - file
     - image
     - node
-id: node.field_image
+id: node.field_image_article
 field_name: field_image_article
 entity_type: node
 type: image

@@ -6,7 +6,7 @@ dependencies:
     - field.field.node.product.body
     - field.field.node.product.comment
     - field.field.node.product.field_image_product
-    - field.field.node.product.field_tags_product
+    - field.field.node.product.field_tag_product
     - image.style.medium
     - node.type.product
   module:
@@ -35,7 +35,7 @@ content:
       image_link: content
     third_party_settings: {  }
     label: hidden
-  field_tags_product:
+  field_tag_product:
     type: entity_reference_label
     weight: 10
     region: content
@@ -49,4 +49,4 @@ content:
 hidden:
   comment: true
   field_image_product: true
-  field_tags_product: true
+  field_tag_product: true
