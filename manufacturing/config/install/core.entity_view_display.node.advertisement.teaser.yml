@@ -45,10 +45,11 @@ content:
     third_party_settings: {  }
     label: above
   field_file_advertisement:
-    type: file
-    weight: -1
+    type: file_default
+    weight: 9
     region: content
     settings:
+      use_description_as_link_text: 1
     third_party_settings: {  }
     label: hidden
   links:

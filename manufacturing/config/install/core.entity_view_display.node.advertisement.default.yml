@@ -56,7 +56,7 @@ content:
     third_party_settings: {  }
   field_file_advertisement:
     type: file_default
-    weight: -9
+    weight: 9
     region: content
     settings:
       use_description_as_link_text: 1
