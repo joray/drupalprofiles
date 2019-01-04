@@ -54,6 +54,14 @@ content:
     settings:
       link: true
     third_party_settings: {  }
+  field_file_advertisement:
+    type: file_default
+    weight: -9
+    region: content
+    settings:
+      use_description_as_link_text: 1
+    third_party_settings: {  }
+    label: hidden
   links:
     weight: 100
     region: content

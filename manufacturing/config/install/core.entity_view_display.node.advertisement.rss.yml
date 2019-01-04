@@ -24,3 +24,4 @@ hidden:
   comment: true
   field_image_advertisement: true
   field_tag_advertisement: true
+  field_file_advertisement: true

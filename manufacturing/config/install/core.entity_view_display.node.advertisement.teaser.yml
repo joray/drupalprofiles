@@ -44,6 +44,13 @@ content:
       link: true
     third_party_settings: {  }
     label: above
+  field_file_advertisement:
+    type: file
+    weight: -1
+    region: content
+    settings:
+    third_party_settings: {  }
+    label: hidden
   links:
     weight: 100
     region: content

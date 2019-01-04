@@ -58,6 +58,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_file_advertisement:
+    type: file_generic
+    weight: 5
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
   path:
     type: path
     weight: 30
