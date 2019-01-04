@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.advertisement.comment
     - field.field.node.advertisement.field_image_advertisement
     - field.field.node.advertisement.field_tag_advertisement
+    - field.field.node.advertisement.field_file_advertisement
     - image.style.thumbnail
     - node.type.advertisement
   module:
@@ -13,6 +14,7 @@ dependencies:
     - image
     - path
     - text
+    - file
 id: node.advertisement.default
 targetEntityType: node
 bundle: advertisement
