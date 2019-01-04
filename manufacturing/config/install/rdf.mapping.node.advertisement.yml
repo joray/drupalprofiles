@@ -47,3 +47,6 @@ fieldMappings:
   field_tag_advertisementtag:
     properties:
       - 'schema:about'
+  field_file_advertisementtag:
+    properties:
+      - 'schema:file'
