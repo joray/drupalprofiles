@@ -39,8 +39,6 @@ install:
   - views_ui
   - tour
   - automated_cron
-  - token
-  - file_entity
 themes:
   - bartik
   - seven
