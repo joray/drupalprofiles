@@ -11,3 +11,6 @@ https://www.drupal.org/project/commerce_alipay 不稳定
 https://www.drupal.org/project/search_api_autocomplete
 
 
+pannellum.j
+
+
