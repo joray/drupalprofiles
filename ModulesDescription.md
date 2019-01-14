@@ -10,7 +10,11 @@ https://www.drupal.org/project/commerce_alipay 不稳定
 
 https://www.drupal.org/project/search_api_autocomplete
 
+https://www.drupal.org/project/default_content 
 
+https://www.drupal.org/project/commerce_inventory 多仓
+
+https://www.drupal.org/project/commerce_stock store库存
 pannellum.j
 
 
