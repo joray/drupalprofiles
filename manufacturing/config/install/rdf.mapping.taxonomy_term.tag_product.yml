@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tag_product
+  module:
+    - taxonomy
+id: taxonomy_term.tag_product
+targetEntityType: taxonomy_term
+bundle: tag_product
+types:
+  - 'schema:Thing'
+fieldMappings:
+  name:
+    properties:
+      - 'schema:name'
+  description:
+    properties:
+      - 'schema:description'

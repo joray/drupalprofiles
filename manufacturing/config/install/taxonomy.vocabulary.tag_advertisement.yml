@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Tag Advertisement
+vid: tag_advertisement
+description: 'Use Tag Advertisement to group articles on similar topics into categories.'
+hierarchy: 0
+weight: 0

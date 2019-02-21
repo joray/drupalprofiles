@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tag_product
+    - node.type.product
+    - taxonomy.vocabulary.tag_product
+id: node.product.field_tag_product
+field_name: field_tag_product
+entity_type: node
+bundle: product
+label: Tag
+description: 'Enter a comma-separated list. For example: Amsterdam, Mexico City, "Cleveland, Ohio"'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tag_product
+    sort:
+      field: _none
+    auto_create: true
+field_type: entity_reference
