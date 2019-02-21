@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-name: Tag Article
-vid: tag_article
-description: 'Use Tag Article to group articles on similar topics into categories.'
-hierarchy: 0
-weight: 0

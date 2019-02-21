@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-name: Tag Product
-vid: tag_product
-description: 'Use Tag Product to group articles on similar topics into categories.'
-hierarchy: 0
-weight: 0
