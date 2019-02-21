@@ -10,6 +10,25 @@ use Drupal\user\RoleInterface;
 use Drupal\shortcut\Entity\Shortcut;
 
 /**
+ * Implements hook_requirements().
+ */
+function manufacturing_requirements($phase) {
+  $requirements = [];
+  if ($phase == 'runtime') {
+    $profile = \Drupal::installProfile();
+    $info = system_get_info('module', $profile);
+    $requirements['experimental_profile_used'] = [
+      'title' => t('Experimental installation profile used'),
+      'value' => $info['name'],
+      'description' => t('Experimental profiles are provided for testing purposes only. Use at your own risk. To start building a new site, reinstall Drupal and choose a non-experimental profile.'),
+      'severity' => REQUIREMENT_WARNING,
+    ];
+  }
+  return $requirements;
+}
+
+
+/**
  * Implements hook_install().
  *
  * Perform actions to set up the site for this profile.
@@ -30,6 +49,11 @@ function manufacturing_install() {
 
   // Assign user 1 the "administrator" role.
   $user = User::load(1);
+  $user->roles[] = 'administrator';
+  $user->save();
+
+  // Assign user 2 the "administrator" role.
+  $user = User::load(2);
   $user->roles[] = 'administrator';
   $user->save();
 
@@ -71,4 +95,9 @@ function manufacturing_install() {
 
   // Enable the admin theme.
   \Drupal::configFactory()->getEditable('node.settings')->set('use_admin_theme', TRUE)->save(TRUE);
+
+  // Enable the create content module. This can't be specified as a dependency
+  // in the manufacturing.info.yml file, as it requires configuration provided by
+  // the profile (fields etc.).
+  \Drupal::service('module_installer')->install(['create_content'], TRUE);
 }
