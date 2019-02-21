@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\demo_umami_content;
+namespace Drupal\create_content;
 
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -122,9 +122,9 @@ class InstallHelper implements ContainerInjectionInterface {
    * @return $this
    */
   protected function importArticles() {
-    $module_path = $this->moduleHandler->getModule('demo_umami_content')
+    $module_path = $this->moduleHandler->getModule('create_content')
       ->getPath();
-    if (($handle = fopen($module_path . '/default_content/articles.csv', "r")) !== FALSE) {
+    if (($handle = fopen($module_path . '/content/articles.csv', "r")) !== FALSE) {
       $uuids = [];
       $header = fgetcsv($handle);
       while (($data = fgetcsv($handle)) !== FALSE) {
@@ -138,7 +138,7 @@ class InstallHelper implements ContainerInjectionInterface {
         // Fields mapping starts.
         // Set Body Field.
         if (!empty($data['body'])) {
-          $body_path = $module_path . '/default_content/article_body/' . $data['body'];
+          $body_path = $module_path . '/content/article_body/' . $data['body'];
           $body = file_get_contents($body_path);
           if ($body !== FALSE) {
             $values['body'] = [['value' => $body, 'format' => 'basic_html']];
@@ -162,7 +162,7 @@ class InstallHelper implements ContainerInjectionInterface {
         }
         // Set Image field.
         if (!empty($data['image'])) {
-          $path = $module_path . '/default_content/images/' . $data['image'];
+          $path = $module_path . '/content/images/' . $data['image'];
           $values['field_image'] = [
             'target_id' => $this->createFileEntity($path),
             'alt' => $data['alt'],
@@ -186,9 +186,9 @@ class InstallHelper implements ContainerInjectionInterface {
    * @return $this
    */
   protected function importRecipes() {
-    $module_path = $this->moduleHandler->getModule('demo_umami_content')->getPath();
+    $module_path = $this->moduleHandler->getModule('create_content')->getPath();
 
-    if (($handle = fopen($module_path . '/default_content/recipes.csv', "r")) !== FALSE) {
+    if (($handle = fopen($module_path . '/content/recipes.csv', "r")) !== FALSE) {
       $header = fgetcsv($handle);
       $uuids = [];
       while (($data = fgetcsv($handle)) !== FALSE) {
@@ -209,7 +209,7 @@ class InstallHelper implements ContainerInjectionInterface {
         }
         // Set field_image field.
         if (!empty($data['image'])) {
-          $image_path = $module_path . '/default_content/images/' . $data['image'];
+          $image_path = $module_path . '/content/images/' . $data['image'];
           $values['field_image'] = [
             'target_id' => $this->createFileEntity($image_path),
             'alt' => $data['alt'],
@@ -253,7 +253,7 @@ class InstallHelper implements ContainerInjectionInterface {
         }
         // Set field_recipe_instruction Field.
         if (!empty($data['recipe_instruction'])) {
-          $recipe_instruction_path = $module_path . '/default_content/recipe_instructions/' . $data['recipe_instruction'];
+          $recipe_instruction_path = $module_path . '/content/recipe_instructions/' . $data['recipe_instruction'];
           $recipe_instructions = file_get_contents($recipe_instruction_path);
           if ($recipe_instructions !== FALSE) {
             $values['field_recipe_instruction'] = [['value' => $recipe_instructions, 'format' => 'basic_html']];
@@ -284,7 +284,7 @@ class InstallHelper implements ContainerInjectionInterface {
    * @return $this
    */
   protected function importPages() {
-    if (($handle = fopen($this->moduleHandler->getModule('demo_umami_content')->getPath() . '/default_content/pages.csv', "r")) !== FALSE) {
+    if (($handle = fopen($this->moduleHandler->getModule('create_content')->getPath() . '/content/pages.csv', "r")) !== FALSE) {
       $headers = fgetcsv($handle);
       $uuids = [];
       while (($data = fgetcsv($handle)) !== FALSE) {
@@ -327,7 +327,7 @@ class InstallHelper implements ContainerInjectionInterface {
    * @return $this
    */
   protected function importBlockContent() {
-    $module_path = $this->moduleHandler->getModule('demo_umami_content')->getPath();
+    $module_path = $this->moduleHandler->getModule('create_content')->getPath();
     $block_content_entities = [
       'umami_recipes_banner' => [
         'uuid' => '4c7d58a3-a45d-412d-9068-259c57e40541',
@@ -348,7 +348,7 @@ class InstallHelper implements ContainerInjectionInterface {
           'value' => 'A wholesome pasta bake is the ultimate comfort food. This delicious bake is super quick to prepare and an ideal midweek meal for all the family.',
         ],
         'field_banner_image' => [
-          'target_id' => $this->createFileEntity($module_path . '/default_content/images/veggie-pasta-bake-hero-umami.jpg'),
+          'target_id' => $this->createFileEntity($module_path . '/content/images/veggie-pasta-bake-hero-umami.jpg'),
           'alt' => 'Mouth watering vegetarian pasta bake with rich tomato sauce and cheese toppings',
         ],
       ],
@@ -384,7 +384,7 @@ class InstallHelper implements ContainerInjectionInterface {
           'title' => 'Find out more',
         ],
         'field_promo_image' => [
-          'target_id' => $this->createFileEntity($module_path . '/default_content/images/umami-bundle.png'),
+          'target_id' => $this->createFileEntity($module_path . '/content/images/umami-bundle.png'),
           'alt' => '3 issue bundle of the Umami food magazine',
         ],
       ],
@@ -405,7 +405,7 @@ class InstallHelper implements ContainerInjectionInterface {
    * @return $this
    */
   public function deleteImportedContent() {
-    $uuids = $this->state->get('demo_umami_content_uuids', []);
+    $uuids = $this->state->get('create_content_uuids', []);
     $by_entity_type = array_reduce(array_keys($uuids), function ($carry, $uuid) use ($uuids) {
       $entity_type_id = $uuids[$uuid];
       $carry[$entity_type_id][] = $uuid;
@@ -508,8 +508,8 @@ class InstallHelper implements ContainerInjectionInterface {
    *   type.
    */
   protected function storeCreatedContentUuids(array $uuids) {
-    $uuids = $this->state->get('demo_umami_content_uuids', []) + $uuids;
-    $this->state->set('demo_umami_content_uuids', $uuids);
+    $uuids = $this->state->get('create_content_uuids', []) + $uuids;
+    $this->state->set('create_content_uuids', $uuids);
   }
 
   /**
