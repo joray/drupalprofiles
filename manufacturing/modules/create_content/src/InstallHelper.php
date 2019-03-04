@@ -96,8 +96,8 @@ class InstallHelper implements ContainerInjectionInterface {
   protected function importEditors() {
     $user_storage = $this->entityTypeManager->getStorage('user');
     $editors = [
-      'Margaret Hopper',
-      'Grace Hamilton',
+      'Joray',
+      'Jerry',
     ];
     foreach ($editors as $name) {
       $user = $user_storage->create([
@@ -147,10 +147,10 @@ class InstallHelper implements ContainerInjectionInterface {
         }
         // Set field_tags if exists.
         if (!empty($data['tags'])) {
-          $values['field_tags'] = [];
+          $values['field_tag_article'] = [];
           $tags = explode(',', $data['tags']);
           foreach ($tags as $term) {
-            $values['field_tags'][] = ['target_id' => $this->getTerm($term)];
+            $values['field_tag_article'][] = ['target_id' => $this->getTerm($term)];
           }
         }
         // Set article author.
@@ -160,7 +160,7 @@ class InstallHelper implements ContainerInjectionInterface {
         // Set Image field.
         if (!empty($data['image'])) {
           $path = $module_path . '/content/images/' . $data['image'];
-          $values['field_image'] = [
+          $values['field_image_article'] = [
             'target_id' => $this->createFileEntity($path),
             'alt' => $data['alt'],
           ];
