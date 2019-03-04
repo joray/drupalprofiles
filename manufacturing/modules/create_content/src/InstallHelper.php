@@ -239,7 +239,7 @@ class InstallHelper implements ContainerInjectionInterface {
    * @return int
    *   Term ID.
    */
-  protected function getTerm($term_name, $vocabulary_id = 'tags') {
+  protected function getTerm($term_name, $vocabulary_id = 'tag_article') {
     $term_name = trim($term_name);
     $term_storage = $this->entityTypeManager->getStorage('taxonomy_term');
     $terms = $term_storage->loadByProperties([
