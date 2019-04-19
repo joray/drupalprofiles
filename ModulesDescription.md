@@ -18,3 +18,18 @@ https://www.drupal.org/project/commerce_stock store库存
 pannellum.j
 
 
+        "drupal-composer/drupal-scaffold": "^2.5",
+        "drupal/admin_toolbar": "~1.0",
+        "drupal/console": "^1.0.2",
+        "drupal/core": "^8.6.0",
+        "drupal/commerce": "~2.0",
+        "drupal/search_api": "^1.6",
+        "drupal/swiftmailer": "~1.0",
+        "drupal/token": "~1.0",
+        "drupalcommerce/commerce_base": "dev-8.x-1.x",
+        "oomphinc/composer-installers-extender": "^1.1",
+        "webflo/drupal-finder": "^1.0",
+        "webmozart/path-util": "^2.3",
+        "drupal/commerce_paypal": "^1.0@beta",
+        "drupal/commerce_postcode_delivery": "^1.2",
+        "drupal/commerce_ups": "3.x-dev"
