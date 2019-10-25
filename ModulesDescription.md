@@ -14,6 +14,9 @@ https://www.drupal.org/project/default_content
 
 https://www.drupal.org/project/commerce_inventory 多仓
 https://www.drupal.org/project/imagefield_slideshow
+
+https://www.drupal.org/project/FieldSlideshow
+
 https://www.drupal.org/project/commerce_stock store库存
 pannellum.js
 
